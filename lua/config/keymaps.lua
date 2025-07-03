@@ -6,6 +6,21 @@ mapkey("<leader>bp", "bprevious", "n") -- Prev buffer
 mapkey("<leader>bb", "e #", "n") -- Switch to Other Buffer
 mapkey("<leader>`", "e #", "n") -- Switch to Other Buffer
 
+-- Tab Navigation
+mapkey("TT", "tabnew", "n") -- New tab
+mapkey("tn", "tabn", "n") -- Next tab
+mapkey("tp", "tabp", "n") -- Prev tab
+mapkey("<C-S-Right>", "tabn", "n") -- Next tab
+mapkey("<C-S-Left>", "tabp", "n") -- Prev tab
+-- mapkey("<C-S-Right>", "tabn", "i") -- Next tab
+-- mapkey("<C-S-Left>", "tabp", "i") -- Next tab
+
+vim.cmd( [[
+  let g:lasttab = 1
+  map tt :exe "tabn ".g:lasttab<CR>
+  au TabLeave * let g:lasttab = tabpagenr()
+]])
+
 -- Directory Navigatio}n
 mapkey("<leader>m", "NvimTreeFocus", "n")
 mapkey("<leader>e", "NvimTreeToggle", "n")

@@ -16,9 +16,9 @@ opt.hlsearch = false
 
 -- Appearance
 opt.number = true
-opt.relativenumber = true
+opt.relativenumber = false
 opt.termguicolors = true
-opt.colorcolumn = "100"
+opt.colorcolumn = "120"
 opt.signcolumn = "yes"
 opt.cmdheight = 1
 opt.scrolloff = 10
@@ -36,7 +36,8 @@ opt.splitright = true
 opt.splitbelow = true
 opt.autochdir = false
 opt.iskeyword:append("-")
-opt.selection = "exclusive"
+-- opt.selection = "exclusive"
+opt.selection = "inclusive"
 opt.mouse = "a"
 opt.clipboard:append("unnamedplus")
 opt.modifiable = true

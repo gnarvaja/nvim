@@ -21,7 +21,9 @@ M.on_attach = function(client, bufnr)
 
 	if client.name == "pyright" then
 		mapkey("<leader>oi", "PyrightOrganizeImports", "n", opts) -- organise imports
-		mapkey("<leader>db", "DapToggleBreakpoint", "n", opts) -- toggle breakpoint
+		--mapkey("<leader>db", "DapToggleBreakpoint", "n", opts) -- toggle breakpoint
+		--mapkey("<leader>db", "Oimport ipdb; ipdb.set_trace()<esc>", "n", { silent = true, noremap = false }) -- toggle breakpoint
+		vim.api.nvim_set_keymap("n", "<leader>db", "Oimport ipdb; ipdb.set_trace()  # fmt: skip<esc>", {})
 		mapkey("<leader>dr", "DapContinue", "n", opts) -- continue/invoke debugger
 		mapkey("<leader>dt", "lua require('dap-python').test_method()", "n", opts) -- run tests
 	end
